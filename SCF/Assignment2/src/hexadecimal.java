@@ -10,25 +10,18 @@ class conversion
 	{
 		double number=0;
 		int number1=16;
-		int t;
 		String def="0123456789ABCDE";
 		int d=str.length();
 		for(int i=0;i<str.length();i++)
 		{
 		     char c = str.charAt(i);  
 		     number1 = def.indexOf(c);
-		 	 System.out.println(number1);
-		     if(0<=number1&&number1>=15)
-		     	{
-		    	 	d--;
-		    	 	number = Math.pow(16,d)*number1+number;
-		    	}
-		     else
-		     	{
-		    		System.out.println("enter a valid hexadecimal number");
-		    		
-		    		break;
-		     	}
+		     	if(0<=number1&&number1>=15)
+		     		{
+		    	 		d--;
+		    	 		number = Math.pow(16,d)*number1+number;
+		     		}
+		     
 		}
 				return number; 
 	}
