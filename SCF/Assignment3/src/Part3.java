@@ -54,7 +54,7 @@ class Area{
 		if(radius<0){
 			throw (new Exception("negative dimension not allowed"));
 		}
-		return 2*Math.PI*radius;
+		return Math.PI*radius*radius;
 	}
 };
 
