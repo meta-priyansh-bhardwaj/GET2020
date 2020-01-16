@@ -66,7 +66,7 @@ class schedular
 		
 		try{
 			int temp;
-			scheduler s=new scheduler();
+			schedular s=new schedular();
 			no_of_input=input.nextInt();
 				if(no_of_input>0)
 				{

@@ -16,7 +16,7 @@ class conversion
 		{
 		     char c = str.charAt(i);  
 		     number1 = def.indexOf(c);
-		     	if(0<=number1&&number1>=15)
+		     	if(0<=number1&&number1<=15)
 		     		{
 		    	 		d--;
 		    	 		number = Math.pow(16,d)*number1+number;
