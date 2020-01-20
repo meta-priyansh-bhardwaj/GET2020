@@ -63,10 +63,10 @@ public class Search {
 	 */
 	private static int BinarySearchUtil(int arr[], int element, int low,
 			int high) {
-		if (low > high) {
+		if (low >= high) {
 			return -1;
 		}
-		int mid = (low + high);
+		int mid = (low + high)/2;
 		if (arr[mid] == element) {
 			return mid;
 		} else if (arr[mid] > element) {
@@ -74,5 +74,8 @@ public class Search {
 		} else {
 			return BinarySearchUtil(arr, element, mid + 1, high);
 		}
+	}
+	public static void main(String args[]) throws Exception{
+		System.out.println(BinarySearch(new int[]{1,2,3,4,5},3));
 	}
 };

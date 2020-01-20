@@ -16,7 +16,7 @@ public class TestSearch {
 
 	@Test
 	public void testLinearSearchPositiveInput() throws Exception {
-		 assertEquals(2,Search.LinearSearch(new int[]{1,2,3,4,5},0));  
+		 assertEquals(-1,Search.LinearSearch(new int[]{1,2,3,4,5},0));  
 	}
 
 	@Test
@@ -46,7 +46,7 @@ public class TestSearch {
 
 	@Test
 	public void testBinarySearchPositiveInput() throws Exception {
-		 assertEquals(3,Search.BinarySearch(new int[]{1,2,3,4,5},3));  
+		 assertEquals(2,Search.BinarySearch(new int[]{1,2,3,4,5},3));  
 	}
 
 	@Test
