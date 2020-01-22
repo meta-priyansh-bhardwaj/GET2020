@@ -7,19 +7,23 @@ class conversion {
 	 * @param str: hexadecimal number.
 	 * @return decimal equivalent of given hexadecimal number.
 	 */
-	public double Hex_to_dec(String str) {
-		double number = 0;
-		int number1 = 16;
-		String def = "0123456789ABCDE";
-		int d = str.length();
-		for (int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
-			number1 = def.indexOf(c);
-			if (0 <= number1 && number1 <= 15) {
-				d--;
-				number = Math.pow(16, d) * number1 + number;
-			}
 
+	public double Hex_to_dec(String str)
+	{
+		double number=0;
+		int number1=16;
+		String def="0123456789ABCDE";
+		int d=str.length();
+		for(int i=0;i<str.length();i++)
+		{
+		     char c = str.charAt(i);  
+		     number1 = def.indexOf(c);
+		     	if(0<=number1&&number1<=15)
+		     		{
+		    	 		d--;
+		    	 		number = Math.pow(16,d)*number1+number;
+		     		}
+		     
 		}
 		return number;
 	}
@@ -32,7 +36,6 @@ class conversion {
 	 */
 	public void add(double d, double d1) {
 		int d2 = (int) (d + d1);
-		System.out.println(d2);
 		Dec_to_hex(d2);
 	}
 
@@ -69,13 +72,15 @@ class conversion {
 	 * @param d decimal number
 	 */
 	public void Dec_to_hex(int d) {
-		int rem;
+		int remainder;
+
 		String str2 = "";
 		char hex[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
 				'B', 'C', 'D', 'E', 'F' };
 		while (d > 0) {
-			rem = d % 16;
-			str2 = hex[rem] + str2;
+			remainder = d % 16;
+			str2 = hex[remainder] + str2;
+
 			d = d / 16;
 		}
 		System.out.println(str2);
@@ -126,7 +131,9 @@ class conversion {
 }
 
 public class hexadecimal {
-	public static void main(String args[]) {
+
+	public static void main(String args[]) throws Exception{
+
 		Scanner input = new Scanner(System.in);
 		System.out.println("enter the hexadecimal no1");
 		String str = input.next();
@@ -187,5 +194,5 @@ public class hexadecimal {
 
 			}
 		}
-	}
+
 }

@@ -3,7 +3,7 @@
  * @author Priyansh
  *
  */
-class Area{
+public class Area{
 	
 	/**
 	 * @param base

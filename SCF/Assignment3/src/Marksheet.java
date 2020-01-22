@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * Design a class Marksheet, which reads in grades of n no of students. Assume n
@@ -8,7 +8,7 @@ import java.util.*;
  *
  */
 
-public class Marksheet{
+class Marksheet{
 	private int count, passed;
 	private int grades[];
 	private float maximum,total,minimum;
