@@ -40,8 +40,8 @@ public class Poly {
 	 * @param x
 	 * @return value of polynomial
 	 */
-	public float evaluate(float x) {
-		int value = 0;
+	public double evaluate(double x) {
+		double value = 0;
 		for (int i = 0; i < Polynomial.length; i++) {
 			value += Math.pow(x, Polynomial[i][0]) * Polynomial[i][1];
 		}
