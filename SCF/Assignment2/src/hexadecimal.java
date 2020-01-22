@@ -7,25 +7,23 @@ class conversion {
 	 * @param str: hexadecimal number.
 	 * @return decimal equivalent of given hexadecimal number.
 	 */
-	public double Hex_to_dec(String str) throws Exception {
-		double number = 0;
-		int number1 = 16;
-		String def = "0123456789ABCDE";
-		int d = str.length();
-		for (int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
-			if(c>='a' && c<='f'){
-				c = (char)(c-32);
-			}
-			
-			number1 = def.indexOf(c);
-			if (0 <= number1 && number1 <= 15) {
-				d--;
-				number = Math.pow(16, d) * number1 + number;
-			} else {
-				throw new Exception("Unknown character exception");
-			}
 
+	public double Hex_to_dec(String str)
+	{
+		double number=0;
+		int number1=16;
+		String def="0123456789ABCDE";
+		int d=str.length();
+		for(int i=0;i<str.length();i++)
+		{
+		     char c = str.charAt(i);  
+		     number1 = def.indexOf(c);
+		     	if(0<=number1&&number1<=15)
+		     		{
+		    	 		d--;
+		    	 		number = Math.pow(16,d)*number1+number;
+		     		}
+		     
 		}
 		return number;
 	}
@@ -192,5 +190,5 @@ public class hexadecimal {
 
 			}
 		}
-	}
+
 }
