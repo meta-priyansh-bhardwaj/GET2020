@@ -73,12 +73,14 @@ class conversion {
 	 */
 	public void Dec_to_hex(int d) {
 		int remainder;
+
 		String str2 = "";
 		char hex[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
 				'B', 'C', 'D', 'E', 'F' };
 		while (d > 0) {
 			remainder = d % 16;
 			str2 = hex[remainder] + str2;
+
 			d = d / 16;
 		}
 		System.out.println(str2);
@@ -129,7 +131,9 @@ class conversion {
 }
 
 public class hexadecimal {
+
 	public static void main(String args[]) throws Exception{
+
 		Scanner input = new Scanner(System.in);
 		System.out.println("enter the hexadecimal no1");
 		String str = input.next();

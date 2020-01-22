@@ -5,7 +5,7 @@
  *  
 */
 
-class ArrayOperation{
+public class ArrayOperation{
 	
 	/*
 	 * @param arr is an array of positive numbers in which mirror sub array has to be found out
@@ -125,52 +125,4 @@ class ArrayOperation{
 		}
 		return -1;
 	}
-}
-
-public class Main {
-	public static void printArray(int arr[]){
-		if(arr.length==0) return;
-		System.out.print("[");
-		for(int i=0;i<arr.length;i++){
-			System.out.print(arr[i]);
-			if(i+1<arr.length){
-				System.out.print(", ");
-			}
-		}
-		System.out.println("]");
-	}
-	public static void main(String args[]){
-		try{
-			System.out.println(ArrayOperation.maxMirror(new int[]{1, 2, 3, 8, 9, 3, 2, 1}));
-			System.out.println(ArrayOperation.maxMirror(new int[]{7, 1, 4, 9, 7, 4, 1}));
-			System.out.println(ArrayOperation.maxMirror(new int[]{1, 2, 1, 4}));
-			System.out.println(ArrayOperation.maxMirror(new int[]{1, 4, 5, 3, 5, 4, 1}));
-			
-			System.out.println(ArrayOperation.countClumps(new int[]{1, 2, 2, 3, 4, 4}));
-			System.out.println(ArrayOperation.countClumps(new int[]{1, 1, 2, 1, 1}));
-			System.out.println(ArrayOperation.countClumps(new int[]{1, 1, 1, 1, 1}));
-			
-			printArray(ArrayOperation.fixXY(new int[]{5, 4, 9, 4, 9, 5}, 4, 5));
-			printArray(ArrayOperation.fixXY(new int[]{1, 4, 1, 5}, 4, 5));
-			printArray(ArrayOperation.fixXY(new int[]{1, 4, 1, 5, 5, 4, 1}, 4, 5));
-			
-			System.out.println(ArrayOperation.splitArray(new int[]{1, 1, 1, 2, 1}));
-			System.out.println(ArrayOperation.splitArray(new int[]{2, 1, 1, 2, 1}));
-			System.out.println(ArrayOperation.splitArray(new int[]{10, 10}));
-			
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-		String message ="Hey";
-	   public Main(String message){
-		      this.message = message;
-		   }
-		      
-		   // prints the message
-		   public String printMessage(){
-		      System.out.println(message);
-		      return message;
-		   } 
 }
