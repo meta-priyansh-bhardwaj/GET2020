@@ -33,10 +33,11 @@ class schedular
 	 */
 	public int[] waitingTime(int Array[][], int Size){
 
+		int[] turnAroundArray = new int[Size];
 		int[] waitingArray = new int[Size];
-		waitingArray = turnAroundTime(Array,Size);
+		turnAroundArray = turnAroundTime(Array,Size);
 		for (int i = 0 ; i < Size ; i++){
-			waitingArray[i] = waitingArray[i] - Array[i][1];
+			waitingArray[i] = turnAroundArray[i] - Array[i][1];
 		}
 		return waitingArray;
 	}
@@ -49,10 +50,11 @@ class schedular
 	
 	public int[] turnAroundTime(int Array[][], int Size){
 		
+		int[] completionArray = new int[Size];
 		int[] turnAroundArray = new int[Size];
-		turnAroundArray = completion_time(Array,Size);
+		completionArray = completion_time(Array,Size);
 		for (int i = 0 ; i < Size ; i++){
-			turnAroundArray[i] = turnAroundArray[i] - Array[i][0];
+			turnAroundArray[i] = completionArray[i] - Array[i][0];
 		}
 		return turnAroundArray;
 	}
