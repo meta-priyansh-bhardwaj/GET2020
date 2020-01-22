@@ -21,23 +21,31 @@
  *
  */
 public class Set {
-	private static final int capacity = 1001, lowerBound = 1,
-			upperBound = 1000;
+	private static final int CAPACITY = 1001, LOWERBOUND = 1,
+			UPPERBOUND = 1000;
 	private final Boolean[] set;
 	private int size;
 
+	/**
+	 * Default Contructor
+	 */
 	public Set() {
 		size = 0;
-		set = new Boolean[capacity];
-		for (int i = 0; i < capacity; i++) {
+		set = new Boolean[CAPACITY];
+		for (int i = 0; i < CAPACITY; i++) {
 			set[i] = false;
 		}
 	}
 
+	/**
+	 * Constructor to initialize the set 
+	 * @param arr
+	 * @throws Exception
+	 */
 	public Set(int[] arr) throws Exception {
 		this();
 		for (int a : arr) {
-			if (a < lowerBound || a > upperBound) {
+			if (a < LOWERBOUND || a > UPPERBOUND) {
 				throw new Exception("Value out of range");
 			}
 			if (!set[a]) {
@@ -48,17 +56,19 @@ public class Set {
 	}
 	
 	/**
+	 * To check if given element is the member of the set
 	 * @param x element to be checked in set
 	 * @return true if element is present on set else return false
 	 */
 	public Boolean isMember(int x) throws Exception {
-		if (x < lowerBound || x > upperBound) {
+		if (x < LOWERBOUND || x > UPPERBOUND) {
 			throw new Exception("Value is out of range");
 		}
 		return set[x];
 	}
 	
 	/**
+	 * TO get size of the set
 	 * @return size of the set
 	 */
 	public int size() {
@@ -66,11 +76,12 @@ public class Set {
 	}
 	
 	/**
+	 * To check if given set is subset of the set
 	 * @param SET s is the object to check the subset 
 	 * @return true if it is a subset else false
 	 */
 	public Boolean isSubSet(Set s) throws Exception {
-		for (int i = lowerBound; i <= upperBound; i++) {
+		for (int i = LOWERBOUND; i <= UPPERBOUND; i++) {
 			if (s.isMember(i) && !this.isMember(i)) {
 				return false;
 			}
@@ -79,12 +90,13 @@ public class Set {
 	}
 	
 	/**
+	 * To get complement of the set
 	 * @return Complement of a set
 	 */
 	public Set getComplement() throws Exception {
-		int size = capacity - this.size;
+		int size = CAPACITY - this.size;
 		int[] complementArr = new int[size];
-		for (int i = lowerBound, iterator = 0; i <= upperBound
+		for (int i = LOWERBOUND, iterator = 0; i <= UPPERBOUND
 				&& iterator < size; i++) {
 			if (!this.isMember(i)) {
 				complementArr[iterator++] = i;
@@ -94,13 +106,14 @@ public class Set {
 	}
 	
 	/**
+	 * To get union of two sets
 	 * @param s is a set of some number
 	 * @return return union of this and s
 	 */
 	public Set union(Set s) throws Exception {
 		int size = s.size() + this.size();
 		int arr[] = new int[size];
-		for (int i = lowerBound, iterator = 0; i <= upperBound; i++) {
+		for (int i = LOWERBOUND, iterator = 0; i <= UPPERBOUND; i++) {
 			if (s.isMember(i)) {
 				arr[iterator++] = i;
 			}
@@ -111,8 +124,13 @@ public class Set {
 		return new Set(arr);
 	}
 	
+	/**
+	 * To check if given set is equal to the set
+	 * @param s if another Set
+	 * @return true if they are equal or false otherwise
+	 */
 	public Boolean equals(Set s) {
-		for (int i = lowerBound; i < upperBound; i++) {
+		for (int i = LOWERBOUND; i < UPPERBOUND; i++) {
 			if (this.set[i] != s.set[i]) {
 				return false;
 			}
