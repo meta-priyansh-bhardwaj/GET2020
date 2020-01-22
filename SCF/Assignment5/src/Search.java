@@ -10,6 +10,7 @@
  */
 public class Search {
 	/*
+	 * Function to search element in arr linearly
 	 * @param arr is the integer array in which search has to be carried out
 	 * 
 	 * @param element is the element to be searched
@@ -26,6 +27,7 @@ public class Search {
 	}
 	
 	/*
+	 * Utility function to implement recursion for LinearSearch
 	 * @param index is the start index of array
 	 * 
 	 * @param element is the element to be searched
@@ -41,6 +43,7 @@ public class Search {
 	}
 
 	/*
+	 * Function to search element in arr using binary search
 	 * @param arr is the integer array in which search has to be carried out
 	 * @param element is the element to be searched
 	 * @return returns index of the key if it is present in the array else
@@ -54,7 +57,7 @@ public class Search {
 	}
 
 	/**
-	 * 
+	 * Utility function to implement recursion for LinearSearch
 	 * @param arr is the integer array in which search has to be carried out
 	 * @param element is the element to be searched
 	 * @param low is the index of subarray to be searched
@@ -74,8 +77,5 @@ public class Search {
 		} else {
 			return BinarySearchUtil(arr, element, mid + 1, high);
 		}
-	}
-	public static void main(String args[]) throws Exception{
-		System.out.println(BinarySearch(new int[]{1,2,3,4,5},3));
 	}
 };
