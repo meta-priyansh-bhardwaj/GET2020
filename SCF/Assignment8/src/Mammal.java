@@ -1,21 +1,17 @@
 
-public abstract class Mammal implements Animal{
-	String Name;
-	int Age;
-	float weight;
-	int numberOfLegs;
+public abstract class Mammal extends Animal{
+	private int numberOfLegs;
+	
+	public Mammal(String name,int age,float weight,int numberOfLegs){
+		super(name, age, weight);
+		this.numberOfLegs = numberOfLegs;
+	}
+	
+	@Override
 	public String getCategory() {
 		return "Mammal";
 	}
-	public String getNameOfAnimal() {
-		return Name;
-	}
-	public int getAgeOfAnimal() {
-		return Age;
-	}
-	public float getWeightOfAnimal() {
-		return weight;
-	}
+	
 	public int getNumberOfLegs() {
 		return numberOfLegs;
 	}
