@@ -14,10 +14,18 @@ public class Screen {
 		shapesList = new ArrayList<Shape>();
 	}
 	
+	/**
+	 * Returns list of all shapes present on screen
+	 * @return
+	 */
 	public List<Shape> getShapes(){
 		return new ArrayList<Shape>(shapesList);
 	}
 	
+	/**
+	 * Returns number of shapes currently present on screen
+	 * @return
+	 */
 	public int getNumberOfShapes(){
 		return shapesList.size();
 	}

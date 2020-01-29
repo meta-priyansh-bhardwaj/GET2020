@@ -1,5 +1,9 @@
 import java.util.Date;
 
+/**
+ * Class that represent a Circle implements Shape
+ *
+ */
 public class Circle implements Shape {
 	Point center;
 	double radius;
@@ -51,8 +55,7 @@ public class Circle implements Shape {
 	 */
 	@Override
 	public boolean isPointEnclosed(Point point) {
-		double distance = Math.sqrt(Math.pow(this.center.getX() - point.getX(),
-				2) + Math.pow(this.center.getY() - point.getY(), 2));
+		double distance = center.getDistance(point);
 		if (distance <= radius) {
 			return true;
 		} else {
