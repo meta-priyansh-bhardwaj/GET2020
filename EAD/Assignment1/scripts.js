@@ -9,7 +9,7 @@ function validateRegForm() {
     } else if ((document.getElementById('fname').value).length < 2) {
         document.getElementById('fname_error').innerHTML = "Name must be contain atleast two charcter";
         valid = false;
-    } else if ((/^[A-Z]*[a-z]{2,}/.test(document.getElementById('fname').value)) == false) {
+    } else if ((/^[A-Z, a-z]{2,}/.test(document.getElementById('fname').value)) == false) {
         document.getElementById('fname_error').innerHTML = "Name not contain any number";
         valid = false;
     } else {
@@ -21,7 +21,7 @@ function validateRegForm() {
     } else if ((document.getElementById('lname').value).length < 2) {
         document.getElementById('lname_error').innerHTML = "Name must be contain atleast two charcter";
         valid = false;
-    } else if ((/^[A-Z]*[a-z]{2,}/.test(document.getElementById('lname').value)) == false) {
+    } else if ((/^[A-Z, a-z]{2,}/.test(document.getElementById('lname').value)) == false) {
         document.getElementById('lname_error').innerHTML = "Name not contain any number";
         valid = false;
     } else {
@@ -103,7 +103,7 @@ function valCarform() {
     if ((document.getElementById('car_name').value) == "") {
         document.getElementById('car_error').innerHTML = "Enter car name";
         valid = false;
-    } else if ((/^[A-Z]*[a-z]{2,}/).test(document.getElementById('car_name').value) == false) {
+    } else if ((/^[A-Z, a-z]{2,}/).test(document.getElementById('car_name').value) == false) {
         document.getElementById('car_error').innerHTML = "Enter correct car name";
         valid = false;
     } else {
