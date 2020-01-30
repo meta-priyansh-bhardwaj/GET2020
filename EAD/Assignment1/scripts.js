@@ -178,27 +178,27 @@ function calculate() {
         var passtype = document.getElementById('pass_type').value;
         if (passtype == "daily") {
             document.getElementById('price').innerHTML = exchangeCurrency(5);
-        } else if (passtype == "weekly") {
-            document.getElementById('price').innerHTML = exchangeCurrency(100);
         } else if (passtype == "monthly") {
+            document.getElementById('price').innerHTML = exchangeCurrency(100);
+        } else if (passtype == "yearly") {
             document.getElementById('price').innerHTML = exchangeCurrency(500);
         }
     } else if (type == "Two wheeler") {
         var passtype = document.getElementById('pass_type').value;
         if (passtype == "daily") {
             document.getElementById('price').innerHTML = exchangeCurrency(10);
-        } else if (passtype == "weekly") {
-            document.getElementById('price').innerHTML = exchangeCurrency(200);
         } else if (passtype == "monthly") {
+            document.getElementById('price').innerHTML = exchangeCurrency(200);
+        } else if (passtype == "yearly") {
             document.getElementById('price').innerHTML = exchangeCurrency(1000);
         }
     } else if (type == "Four wheeler") {
         var passtype = document.getElementById('pass_type').value;
         if (passtype == "daily") {
             document.getElementById('price').innerHTML = exchangeCurrency(20);
-        } else if (passtype == "weekly") {
-            document.getElementById('price').innerHTML = exchangeCurrency(500);
         } else if (passtype == "monthly") {
+            document.getElementById('price').innerHTML = exchangeCurrency(500);
+        } else if (passtype == "yearly") {
             document.getElementById('price').innerHTML = exchangeCurrency(3500);
         }
     }
