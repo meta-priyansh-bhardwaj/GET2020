@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Registration Form</title>
+
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Registration Form :</legend>
+        <div id="registerFor">
+            <form method="POST" name="registrationform" id="form1">
+
+
+                <table align="center" cellspacing="0px" width="60%">
+                    <th colspan="2">
+                        <center> Registration Form</center>
+                    </th>
+                    <tr>
+
+                        <td> <label for="firstName">FirstName</label></td>
+                        <td><input type="text" name="FirstName" id="fname" placeholder="First Name here"><br />
+                            <sup><span id="fname_error"></span></sup></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="lastName">LastName</label></td>
+                        <td><input type="text" name="LastName" id="lname" placeholder="Last Name here"><br />
+                            <sup><span id="lname_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td><input type="radio" id="m1" name="gender" value="male">Male
+                            <input type="radio" id="f1" name="gender" value="female">Female <br />
+                            <sup><span id="gender_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailId">EmailId</label></td>
+                        <td><input type="text" name="emailId" id="email_id" placeholder="Type Email id here"><br />
+                            <sup><span id="email_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td><input type="password" name="password" id="password" placeholder="password">
+                            <button disabled title="Password should contains Uppercase, Lowercase, Numeric,Alphanumeric, and minimum length of 8">!</button><br/>
+
+
+                            <sup><span id="pass_error"></span></sup>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="confirm password">Confirm password</label></td>
+                        <td><input type="password" name="confirm password" id="confirm_password" oninput="return check(this.id)" placeholder="confirm password"><br />
+                            <sup><span id="message"></span></td></sup>
+                    </tr>
+                    <tr>
+                        <td><label for="contactnumber">ContactNo.</label></td>
+                        <td><input type="tel" id="contact" name="contactnumber" maxlength="10" size="20" placeholder="contact no."><br />
+                            <sup><span id="con_error"></span></sup></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2">
+                            <center><button type="button" onclick="validateRegForm()">Submit</button></center>
+                        </td>
+
+
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+        <div id="carRegistration" style="display:none">
+            <form method="post" name="form2">
+                <table align="center">
+                    <th colspan="3">
+                        <p>
+                            You have succesfully registered : <strong> Registration_Id is <span id="registrationId"></span></strong>
+                        </p>
+                    </th>
+                    <tr>
+                        <td><label for="car name">CarName</label></td>
+                        <td><input type="text" id="car_name" name="CarName" placeholder="car name"><br />
+                            <sup><span id="car_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="type">Vehicle Type</label></td>
+                        <td><select name="type" id="veh_type">
+                                            <option disabled="disabled" selected="true" value="">Select Option</option>
+                                            <option value="Cycle">Cycle</option>
+                                            <option value="Two wheeler">Two wheeler</option>
+                                            <option value="Four wheeler">Four wheeler</option>
+                                    </select><br />
+                            <sup><span id="veh_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="vehicle number">Vehicle Number</label></td>
+                        <td><input type="int" id="veh_num" name="vehicle number" placeholder="vehicle Number">
+                            <br /><sup><span id="num_error"></span></sup></td>
+                        <td><span>Ex:RJ17CAXXXX</span></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="Employee_id">EmployeeId</label></td>
+                        <td><input type="text" id="employee_id" name="Employee Id" placeholder="Employee_id"><br />
+                            <sup><span id="emp_error"></span></sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Discription">Discription</label></td>
+
+                        <td><textarea name="Discription" id="Discription" cols="30" rows="10">
+                                        
+                                    </textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><button type="button" onclick="valCarform()">Submit</button></center>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="passTypeForm" style="display: none">
+            <form method="post">
+                <table align="center">
+                    <tr>
+                        <td><label for="">Pass type</label></td>
+                        <td><select name="typeofpass" id="pass_type" onchange="calculate()">
+                                        <option disabled="disabled" selected="true">Select Option</option>
+                                        <option value="daily">Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select><span id="pass_error"></span></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="currency">Currency</label></td>
+                        <td><input type="radio" id="inr" name="currency" value="inr" checked onclick="changeToInr()">INR
+                            <input type="radio" id="usd" name="currency" value="usd" onclick="changeToUsd()">USD
+                            <input type="radio" id="yen" name="currency" value="yen" onclick="changeToYen()">YEN<br />
+                    </tr>
+                    <tr>
+                        <td>Total Price(<span id="currentCurrency">INR</span>) =</td>
+                        <td><span id="price"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><button type="button" onclick="valPassForm()">Submit</button></center>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="Thank_you" style="display: none">
+            <center>
+                <p><strong>Thank You</strong></p>
+            </center>
+        </div>
+
+    </fieldset>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
