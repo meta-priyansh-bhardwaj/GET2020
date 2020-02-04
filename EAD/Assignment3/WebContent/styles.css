@@ -1,0 +1,17 @@
+.button{
+    display: block;
+  width: 25%;
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+ 
+sup{
+    color: red;
+}
+.details, th, td {
+  border: 1px solid black;
+}
