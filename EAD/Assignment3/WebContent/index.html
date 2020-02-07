@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./styles.css" />
+    <title>
+        STUDENT
+    </title>
+ </head>
+    <body>
+
+       <div id ="display">
+        <fieldset>
+           
+            <legend>Student</legend>
+           
+            <table align="center" cellspacing="0px" width="60%" >
+           <tr> <center><button type="button"  class="button" onclick="addStudent()" >Add Student Details</button></center></tr><br/><br/>
+            <tr><center><button type="button" class="button" onclick="Showdetail()">Show All Student</button></tr><br/><br/>
+           <tr> <center><button type="button"  class="button" onclick="searchStudent()">Search Student</button></center></tr>
+        </table>
+        </fieldset>
+        </div>
+     <div id = "addStudent" style="display:none">
+        <div>
+        <form onsubmit="return validateStudentForm()"  action="StudentDetail" method="post">
+            <table align="center" class="details" cellspacing="0px" width="40%" cellpadding="10px"  >
+                <th colspan="2"><center>Student Detail</center>
+                </th>
+                <tr>
+
+                    <td> <label for="firstName">First Name</label></td>
+                    <td><input type="text" name="firstName" id="firstName" placeholder="Enter First name"><br />
+                        <sup><span id="firstname_error"></span></sup></td>
+                </tr>
+
+                <tr>
+                    <td><label for="lastName">Last Name</label></td>
+                    <td><input type="text" name="lastName" id="lastName" placeholder="Enter Last name"><br />
+                        <sup><span id="lastname_error"></span></sup></td>
+                </tr>
+
+               
+                <tr>
+                    <td><label for="fatherName">Father Name</label></td>
+                    <td><input type="text" name="fatherName" id="fatherName" placeholder="Enter Father name"><br />
+                        <sup><span id="fathername_error"></span></sup></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email_id">EmailId</label></td>
+                    <td><input type="text" name="email_id" id="email_id" placeholder="Enter Email-Id"><br />
+                        <sup><span id="email_error"></span></sup></td>
+                </tr>
+               
+                <tr>
+                    <td><label for="age">Age</label></td>
+                    <td><input type="number" name="age" id="age" placeholder="Enter Age"><br />
+                        <sup><span id="age_error"></span></sup></td>
+                </tr>
+                <tr>
+                    <td><label for="class">Class</label></td>
+                    <td><input type="number" name="class" id="class" placeholder="Enter Class"><br />
+                        <sup><span id="class_error"></span></sup></td>
+                </tr>
+                <tr>
+
+                    <td colspan="2">
+                        <center><button>Submit</button></center>
+                    </td>
+
+
+                </tr>
+            </table>
+            </form>
+        </div>
+     </div>
+    <div id="searchStudent" style="display: none">
+   
+         <form action="searchStudent" method="post">
+			<table align="center" class="details" cellspacing="0px" width="40%" cellpadding="10px"  >
+                <th colspan="2"><center>Search Student</center>
+                </th>
+                <tr>
+
+                    <td> <label for="firstName">First Name</label></td>
+                    <td><input type="text" name="firstName" id="FirstName" placeholder="Enter First name"><br />
+                        <sup><span id="firstname_error"></span></sup></td>
+                </tr>
+
+                <tr>
+                    <td><label for="lastName">Last Name</label></td>
+                    <td><input type="text" name="lastName" id="LastName" placeholder="Enter Last name"><br />
+                        <sup><span id="lastname_error"></span></sup></td>
+                </tr>
+<tr>
+
+                    <td colspan="2">
+                        <center><button onclick="search()">Submit</button></center>
+                    </td>
+
+
+                </tr>
+       
+         </form>
+
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+</html>
