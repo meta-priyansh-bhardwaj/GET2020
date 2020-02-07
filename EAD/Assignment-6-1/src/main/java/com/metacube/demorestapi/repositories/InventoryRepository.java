@@ -5,10 +5,20 @@ import java.util.List;
 
 import com.metacube.demorestapi.pojo.Inventory;
 
+/**
+ *	Class that implements a repository 
+ *
+ */
 public class InventoryRepository {
-	private List<Inventory> inventories;
+	private static List<Inventory> inventories;
 	
+	/**
+	 * Contructor for repository that adds items as per requirement
+	 */
 	public InventoryRepository() {
+		if(inventories!=null){
+			return;
+		}
 		inventories = new ArrayList<Inventory>();
 		Inventory first = new Inventory();
 		first.setName("Apples");
@@ -27,10 +37,19 @@ public class InventoryRepository {
 		
 	}
 	
+	/**
+	 * Returns whole repository
+	 * @return inventories
+	 */
 	public List<Inventory> getInventories() {
 		return inventories;
 	}
 	
+	/**
+	 * To get an inventory
+	 * @param name of item
+	 * @return inventory
+	 */
 	public Inventory getInventory(String name) {
 		for (Inventory i : inventories) {
 			if (i.getName().equals(name)) {
@@ -40,6 +59,11 @@ public class InventoryRepository {
 		return new Inventory();
 	}
 	
+	/**
+	 * Helper function to check if inventory exists
+	 * @param inv the inventory
+	 * @return index if it exists and -1 otherwise
+	 */
 	private int isInventoryExist(Inventory inv) {
 		int numberOfInventories = inventories.size();
 		for (int index = 0; index < numberOfInventories; index++) {
@@ -50,6 +74,11 @@ public class InventoryRepository {
 		return -1;
 	}
 	
+	/**
+	 * Function that adds an inventory to the list
+	 * @param inv the inventory to add
+	 * @return the inventory after addition
+	 */
 	public Inventory addInventory(Inventory inv) {
 		int index = isInventoryExist(inv);
 		if (index == -1) {
@@ -63,11 +92,20 @@ public class InventoryRepository {
 		return currentInventory;
 	}
 	
+	/**
+	 * Function to delete all inventories
+	 * @return the cleared inventories
+	 */
 	public List<Inventory> deleteInventories() {
 		inventories.clear();
 		return inventories;
 	}
 
+	/**
+	 * Delete an inventory from the list if it exists
+	 * @param inventoryName name of the inventory
+	 * @return the inventory that has been removed
+	 */
 	public Inventory deleteInventory(String inventoryName) {
 		Inventory inv = new Inventory();
 		inv.setName(inventoryName);
@@ -80,6 +118,12 @@ public class InventoryRepository {
 		return inv;
 	}
 	
+	/**
+	 * Update an inventory
+	 * @param inventoryName name of the inventory
+	 * @param inv contains data for update
+	 * @return the inventory after update
+	 */
 	public Inventory updateInventory(String inventoryName, Inventory inv) {
 		Inventory tempInventory = new Inventory();
 		tempInventory.setName(inventoryName);
