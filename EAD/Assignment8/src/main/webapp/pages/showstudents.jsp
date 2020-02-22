@@ -20,11 +20,11 @@
 			<c:forEach var="student" items="${students}">
 				<tr>
 					<th scope="row">${student.id}</th>
-					<th>${student.first_name}</th>
-					<th>${student.last_name}</th>
-					<th>${student.father_name}</th>
+					<th>${student.firstName}</th>
+					<th>${student.lastName}</th>
+					<th>${student.fatherName}</th>
 					<th>${student.email}</th>
-					<th>${student.std}</th>
+					<th>${student.standard}</th>
 					<th>${student.age}</th>
 				</tr>
 			</c:forEach>

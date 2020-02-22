@@ -38,14 +38,14 @@
 			
 			<div class="form-group">
 				<form:label path="standard">Class</form:label>
-				<form:input path="standard" type="text" class="form-control"
+				<form:input path="standard" type="number" class="form-control"
 					id="exampleInputClass1" placeholder="Class" />
 				<form:errors path="standard" cssClass="text-danger" />
 			</div>
 			
 			<div class="form-group">
 				<form:label path="age">Age</form:label>
-				<form:input path="age" type="text" class="form-control"
+				<form:input path="age" type="number" class="form-control"
 					id="exampleInputAge1" placeholder="Age" />
 				<form:errors path="age" cssClass="text-danger" />
 			</div>
