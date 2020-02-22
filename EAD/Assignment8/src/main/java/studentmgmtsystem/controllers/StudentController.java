@@ -1,0 +1,56 @@
+package studentmgmtsystem.controllers;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import studentmgmtsystem.model.Student;
+import studentmgmtsystem.service.StudentService;
+
+/**
+ * Class to implement StudentController 
+ *
+ */
+@Controller
+public class StudentController {
+	
+	@Autowired	
+	private StudentService studentService;
+	
+	/**
+	 * Post endpoint '/addStudent' to add student to list
+	 * returns to /home after student is added without errors
+	 * @param student from view model
+	 * @param errors from view model
+	 * @return
+	 */
+	@PostMapping("/addStudent")
+	public String addStudent(@Valid @ModelAttribute("student") Student student, Errors errors) {
+		if (errors.hasErrors()) {
+			return "addstudent";
+		}
+		studentService.addStudent(student);
+		return "redirect:home";
+	}
+	
+	/**
+	 * Function to get all students
+	 * @return ModelAndView
+	 */
+	@GetMapping("/getAllStudents")
+	public ModelAndView getAllStudents() {
+		ModelAndView modelAndView = new ModelAndView();
+		List<Student> studentsList = studentService.getAllStudents();
+		modelAndView.setViewName("showstudents");
+		modelAndView.addObject("students", studentsList);
+		return modelAndView;
+	}
+}
