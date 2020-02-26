@@ -1,15 +1,16 @@
 package metaparking.daoimpl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Types;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import metaparking.dao.VehicleDao;
 import metaparking.models.Vehicle;
-import metaparking.utils.ConnectionUtility;
 
 /**
  * Class to return vehicle related data 
@@ -18,6 +19,13 @@ import metaparking.utils.ConnectionUtility;
 @Repository
 public class VehicleDaoImpl implements VehicleDao {
 
+	private JdbcTemplate jdbcTemplate;
+	
+	public VehicleDaoImpl(JdbcTemplate jdbcTemplate) {
+		super();
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
 	/**
 	 * Get vehicle fro Id
 	 * @param vehicleId
@@ -25,28 +33,7 @@ public class VehicleDaoImpl implements VehicleDao {
 	 */
 	@Override
 	public Vehicle getVehicle(int vehicleId) {
-		Vehicle vehicle = new Vehicle();
-		ConnectionUtility connectionUtility = new ConnectionUtility();
-		Connection connection = connectionUtility.createConnection();
-		try {
-			PreparedStatement st = connection.prepareStatement(selectVehicle);
-			st.setInt(1, vehicleId);
-			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
-				vehicle.setVehicleId(vehicleId);
-				vehicle.setEmpId(rs.getInt("empId"));
-				vehicle.setVehicleName(rs.getString("vehicleName"));
-				vehicle.setType(rs.getString("type"));
-				vehicle.setVehicleNumber(rs.getString("vehicleNumber"));
-				vehicle.setIdentification(rs.getString("identification"));
-				vehicle.setPassId(rs.getInt("passId"));
-			}
-		} catch (SQLException e) {
-			System.out.println("Vehicle could not be fetched...");
-			e.printStackTrace();
-		} finally {
-			connectionUtility.closeConnection(connection);
-		}
+		Vehicle vehicle = jdbcTemplate.queryForObject(selectVehicle, new Object[] {vehicleId}, new BeanPropertyRowMapper<>(Vehicle.class));
 		return vehicle;
 	}
 
@@ -58,30 +45,15 @@ public class VehicleDaoImpl implements VehicleDao {
 	 */
 	@Override
 	public boolean updateVehicle(Vehicle vehicle, int vehicleId) {
-		boolean result = false;
-		ConnectionUtility connectionUtility = new ConnectionUtility();
-		Connection connection = connectionUtility.createConnection();
-		try {
-			PreparedStatement st = connection.prepareStatement(updateVehicle);
-			st.setString(1, vehicle.getVehicleName());
-			st.setString(2, vehicle.getType());
-			st.setString(3, vehicle.getVehicleNumber());
-			st.setString(4, vehicle.getIdentification());
-			st.setInt(5, vehicle.getPassId());
-			st.setInt(6, vehicleId);
-			System.out.println(vehicle);
-			int rowsAffected = st.executeUpdate();
-			if (rowsAffected != 0) {
-				result = true;
-			}
-		} catch (SQLException e) {
-			System.out.println("Vehicle could not Added");
-			e.printStackTrace();
-		} finally {
-			connectionUtility.closeConnection(connection);
-		}
-		System.out.println(result);
-		return result;
+		String vehicleName = vehicle.getVehicleName();
+		String type = vehicle.getType();
+		String vehicleNumber = vehicle.getVehicleNumber();
+		String identification = vehicle.getIdentification();
+		int passId = vehicle.getPassId();
+		Object[] args = new Object[] {vehicleName, type, vehicleNumber, identification, passId, vehicleId};
+		int[] mysqlArgTypes = new int[] {Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.INTEGER};
+		int rowsAffected = jdbcTemplate.update(updateVehicle, args, mysqlArgTypes);
+		return rowsAffected != 0;
 	}
 
 	/**
@@ -92,30 +64,11 @@ public class VehicleDaoImpl implements VehicleDao {
 	@Override
 	public int addVehicle(Vehicle vehicle) {
 		int vehicleId = -1;
-		ConnectionUtility connectionUtility = new ConnectionUtility();
-		Connection connection = connectionUtility.createConnection();
-		try {
-			PreparedStatement st = connection.prepareStatement(insertVehicle);
-			st.setString(1, vehicle.getVehicleName());
-			st.setString(2, vehicle.getType());
-			st.setString(3, vehicle.getVehicleNumber());
-			st.setString(4, vehicle.getIdentification());
-			st.setInt(5, vehicle.getEmpId());
-			st.setInt(6, vehicle.getVehicleId());
-			st.setInt(7, vehicle.getPassId());
-			int rowsAffected = st.executeUpdate();
-			if (rowsAffected != 0) {
-				st = connection.prepareStatement(lastRecord);
-				ResultSet rs = st.executeQuery();
-				rs.next();
-				vehicleId = rs.getInt("id");
-			}
-		} catch (SQLException e) {
-			System.out.println("Vehicle Added");
-			e.printStackTrace();
-		} finally {
-			connectionUtility.closeConnection(connection);
-		}
+		SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+		insertActor.withTableName("Vehicle").usingColumns("vehicleName", "type", "vehicleNumber", "identification", "empId", "passId");
+		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(vehicle);
+		insertActor.execute(param);
+		vehicleId = jdbcTemplate.queryForObject(lastRecord, new Object[0], Integer.class) - 1;
 		return vehicleId;
 	}
 
@@ -125,23 +78,7 @@ public class VehicleDaoImpl implements VehicleDao {
 	 * @return
 	 */
 	public int getVehicleIdByEmpId(int empId) {
-		int vehicleId = -1;
-		ConnectionUtility connectionUtility = new ConnectionUtility();
-		Connection connection = connectionUtility.createConnection();
-		try {
-			PreparedStatement st = connection.prepareStatement(selectVehicleIdByEmpId);
-			st.setInt(1, empId);
-			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
-				vehicleId = rs.getInt(1);
-			}
-		} catch (SQLException e) {
-			System.out.println("Vehicle id could not be fetched...");
-			e.printStackTrace();
-		} finally {
-			connectionUtility.closeConnection(connection);
-		}
-		System.out.println(vehicleId);
+		int vehicleId = jdbcTemplate.queryForObject(selectVehicleIdByEmpId, new Object[] {empId}, Integer.class);
 		return vehicleId;
 	}
 }
