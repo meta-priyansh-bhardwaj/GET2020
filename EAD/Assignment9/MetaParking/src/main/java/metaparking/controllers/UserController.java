@@ -60,7 +60,7 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping("/registerUser")
-	public String registerUser(@Valid @ModelAttribute("user") User user, Errors errors, Model model) {
+	public String registerUser(@Valid @ModelAttribute("employee") User user, Errors errors, Model model) {
 		if (errors.hasErrors()) {
 			return "register";
 		} else {
@@ -88,7 +88,7 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping("/loginUser")
-	public String loginUser(@Valid @ModelAttribute("userDto") UserDto userDto, Errors errors, HttpSession session) {
+	public String loginUser(@Valid @ModelAttribute("employeeDto") UserDto userDto, Errors errors, HttpSession session) {
 		if (errors.hasErrors()) {
 			return "login";
 		} else {
