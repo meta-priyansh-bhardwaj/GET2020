@@ -1,0 +1,148 @@
+nav {
+    background-color: #000080;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+nav a{
+    color: white;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: #1034A6;
+}
+
+.container{
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65rem;
+}
+
+.registrationForm {
+    border: solid 1px #000080;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.container > .brand{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-group > label{
+    display: inline-block;
+    width: 10em;
+    font-size: large;
+}
+
+.form-group > .check-label {
+    display: inline;
+}
+
+.form-group input, .form-group select{
+    padding: 10px;
+    font-size: medium;
+    border-width: 0;
+    border-bottom: 1px black solid;
+    outline: none;
+}
+
+.form-group input:focus{
+    background-color: #F8F8FF;
+}
+
+.form-group input[type="radio"]{
+    height: 16px;
+    width: 16px;
+}
+
+textarea{
+    resize: none;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+}
+
+form > button[type="submit"]{
+    padding: 15px;
+    font-size: medium;
+    margin-left: 10px;
+    background-color: #000080;
+    border-radius: 4px;
+    border-width: 0;
+    color: white;
+    cursor: pointer;
+}
+
+form > button[type="submit"]:hover{
+    background-color: #1034A6;
+}
+
+form > button[type="submit"]:focus{
+    transform: scale(1.1);
+}
+
+#pricing {
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pricing > .pricingItem {
+    display: inline-block;
+    width: 29%;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 0;
+    border: solid 1px #0000F0;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#pricing > .pricingItem > .purchase-button {
+    background-color: white;
+    border: solid 1px #0000F0;
+    border-radius: 5px;
+    padding: 8px;
+    color: #0000F0;
+    font-size: medium;
+}
+
+#pricing > .pricingItem > .purchase-button:hover{
+    color: white;
+    background-color: #0000F0;
+}
+
+#pricing > .pricingItem > .purchase-button:active{
+    transform: scale(1.1);
+}
+
+#pricing > .pricingItem .priceTitle {
+    font-weight: bold;
+    font-size: xx-large;
+    display: block;
+}
+
+#pricing > .pricingItem p:first-of-type{
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    border: solid 1px #0000F0;
+    align-content: center;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
