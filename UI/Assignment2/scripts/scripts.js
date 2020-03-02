@@ -4,6 +4,13 @@ $(document).ready(function(){
       if (this.hash !== "") {
         event.preventDefault();
         var hash = this.hash;
+
+        if($(hash).is(':hidden')){
+          $('.registrationForm').hide();
+          $('#pricing').hide();
+          $(hash).show(500);
+        }
+
         $('html, body').animate({
           scrollTop: $(hash).offset().top-60
         }, 800, function(){});
@@ -17,7 +24,6 @@ $(document).ready(function(){
       event.preventDefault();
       
       let index = ($(this).index()-1)/2;
-      console.log(index)
       if(index < 3){
         if($('.registrationForm').eq(index).is(':hidden')){
           $('.registrationForm').hide();
