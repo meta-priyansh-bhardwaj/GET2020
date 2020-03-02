@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $(".navlink").on('click', function(event) {
       if (this.hash !== "") {
@@ -14,20 +15,29 @@ $(document).ready(function(){
 
     $(".registrationFormOption").click(function(event){
       event.preventDefault();
-      $('.registrationForm').hide();
-      $('#pricing').hide();
+      
       let index = ($(this).index()-1)/2;
       console.log(index)
       if(index < 3){
-        $('.registrationForm').eq(index).show(500);
-        $('html, body').animate({
-          scrollTop: $(".registrationForm").eq(index).offset().top-60
-        }, 800, function(){});
+        if($('.registrationForm').eq(index).is(':hidden')){
+          $('.registrationForm').hide();
+          $('#pricing').hide();
+
+          $('.registrationForm').eq(index).show(500);
+          $('html, body').animate({
+            scrollTop: $(".registrationForm").eq(index).offset().top-60
+          }, 800, function(){});
+        }
       } else {
-        $('#pricing').show(500);
-        $('html, body').animate({
-          scrollTop: $("#pricing").offset().top-60
-        }, 800, function(){});
+        if($('#pricing').is(':hidden')){
+          $('.registrationForm').hide();
+          $('#pricing').hide();
+
+          $('#pricing').show(500);
+          $('html, body').animate({
+            scrollTop: $("#pricing").offset().top-60
+          }, 800, function(){});
+        }
       }
     });
   });
