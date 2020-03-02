@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles/styles.css" />
+
+        <!-- Title goes here -->
+        <title>Metacube Parking System</title>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="#employeeRegistrationForm" class="navlink">
+                Add Employee
+            </a>
+            &nbsp;
+            <a href="#vehicleRegistrationForm" class="navlink">
+                Add Vehicle
+            </a>
+            &nbsp;
+            <a href="#feedbackForm" class="navlink">
+                Give feedback
+            </a>
+            &nbsp;
+            <a href="#pricing" class="navlink">
+                Pricing
+            </a>
+        </nav>
+
+        <div class="container">
+            
+            <img src="images/logo-metacube.png" alt="logo" class="brand" />
+
+            <div class="registrationFormOption">
+                <h1>Add Employee</h1>
+            </div>
+            <!-- Form to add Employee -->
+            <form id="employeeRegistrationForm" class="registrationForm">
+                <h1>
+                    Add Employee
+                </h1>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="fullName" id="fullName" required="true" placeholder="Enter Full Name" />
+                </div>
+                <div class="form-group">
+                        <label>Gender</label>
+                        <label for="male" class="check-label">
+                            <input type="radio" name="gender" id="male" value="Male" checked="true" /> Male
+                        </label>
+                        <label for="female" class="check-label">
+                            <input type="radio" name="gender" id="female" value="Female" /> Female
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailId">Email Id</label>
+                        <input type="email" name="emailId" id="emailId" required="true"
+                            placeholder="Enter Email Id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required="true"
+                            placeholder="Enter Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword" required="true"
+                            placeholder="Confirm Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" name="contact" id="contact" required="true"
+                            placeholder="Enter Contact No." />
+                    </div>
+                    <button type="submit">Submit</button>
+            </form>
+
+            <div class="registrationFormOption">
+                <h1>Add Vehicle</h1>
+            </div>
+            <!-- Form to add vehicle -->
+            <form id="vehicleRegistrationForm" class="registrationForm">
+                <h1>
+                    Add Vehicle
+                </h1>
+                <div class="form-group">
+                    <label for="vehicleCompany">Vehicle Make</label>
+                    <input type="text" name="vehicleCompany" id="vehicleCompany" required="true"
+                        placeholder="(Company)" />
+                </div>
+                <div class="form-group">
+                    <label for="vehicleModel">Vehicle Model</label>
+                    <input type="text" name="vehicleModel" id="vehicleModel" required="true"
+                        placeholder="Enter Vehicle Model" />
+                </div>
+                <div class="form-group">
+                    <label for="vehicleType">Vehicle Type</label>
+                    <select name="vehicleType" id="vehicleType" required="true">
+                        <option value="" disabled="true" selected="true">Select an option</option>
+                        <option value="Cycle">Cycle</option>
+                        <option value="Motorcycle">Motorcycle</option>
+                        <option value="Four Wheeler">Four Wheeler</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehicleNumber">Vehicle Number</label>
+                    <input type="text" name="vehicleNumber" pattern="^[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}$"
+                        id="vehicleNumber" required="true" placeholder="Eg. RJ24CAXXXX" />
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">Employee Id</label>
+                    <input type="text" name="employeeId" id="employeeId" required="true"
+                        placeholder="Enter Employee Id" />
+                </div>
+                <div class="form-group">
+                    <label for="identification">Identification</label>
+                    <textarea name="identification" id="identification" rows="4" cols="25"
+                        placeholder="Colour, mark, visible accessory etc."></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="registrationFormOption">
+                <h1>Get in touch</h1>
+            </div>
+            <!-- Form to provide feedback -->
+            <form id="feedbackForm" class="registrationForm">
+                <h1>
+                    Get in touch
+                </h1>
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" name="userName" id="userName" required="true"
+                        placeholder="Enter Name Here" />
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" name="userEmail" id="userEmail" required="true"
+                        placeholder="Enter Email Here">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" required="true"
+                        placeholder="Enter Subject Here" />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="25" rows="5" 
+                        placeholder="Enter Your Message Here" required="true"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="registrationFormOption">
+                <h1>Pricing</h1>
+            </div>
+            <!-- Shows pricing of all vehicle Types -->
+            <div id="pricing">
+                <h1>Pricing</h1>
+
+                <!-- Prices for cycle -->
+                <div class="pricingItem">
+                    <h2>CYCLE</h2>
+                    <p><span class="priceTitle">$100</span>/month</p>
+                    <p><span class="price">$5</span> Daily</p>
+                    <p><span class="price">$100</span> Monthly</p>
+                    <p><span class="price">$500</span> Yearly</p>
+                    <button class="purchase-button">Purchase Now</button>
+                </div>
+
+                <!-- Prices for Motorcycle -->
+                <div class="pricingItem">
+                    <h2>MOTOR CYCLE</h2>
+                    <p><span class="priceTitle">$200</span>/month</p>
+                    <p><span class="price">$10</span> Daily</p>
+                    <p><span class="price">$200</span> Monthly</p>
+                    <p><span class="price">$1000</span> Yearly</p>
+                    <button class="purchase-button">Purchase Now</button>
+                </div>
+
+                <!-- Prices for Four Wheeler -->
+                <div class="pricingItem">
+                    <h2>FOUR WHEELER</h2>
+                    <p><span class="priceTitle">$500</span>/month</p>
+                    <p><span class="price">$20</span> Daily</p>
+                    <p><span class="price">$500</span> Monthly</p>
+                    <p><span class="price">$3500</span> Yearly</p>
+                    <button class="purchase-button">Purchase Now</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>
