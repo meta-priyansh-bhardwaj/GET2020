@@ -74,10 +74,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int addUser(User user) {
 		SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-		insertActor.withTableName("Employee").usingColumns("fullName", "gender", "emailId", "password", "confirmPassword", "contactNumber", "orgName");
+		insertActor.withTableName("User").usingColumns("fullName", "gender", "emailId", "password", "confirmPassword", "contactNumber", "orgName");
 		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(user);
 		insertActor.execute(param);
 		int empId =  jdbcTemplate.queryForObject(lastRecord, new Object[0], Integer.class) - 1;
+		System.out.println(empId);
 		return empId;
 	}
 
@@ -90,6 +91,7 @@ public class UserDaoImpl implements UserDao {
 		System.out.println("In employee id...");
 		Integer empId = -1;
 		try {
+			System.out.println(emailId);
 			empId = jdbcTemplate.queryForObject(getUserIdByEmail, new Object[] {emailId}, Integer.class);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());

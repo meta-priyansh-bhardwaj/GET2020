@@ -14,7 +14,7 @@ public interface UserDao {
 			+ ", confirmPassword = ?, contactNumber = ?, orgName = ? where empId = ?";
 	String selectUser = "SELECT * FROM User where empId = ?";
 	String lastRecord = "SELECT MAX(empId) AS id FROM User";
-	String getUserIdByEmail = "SELECT empId from User where emailId = ?;";
+	String getUserIdByEmail = "SELECT empId from User where emailId = ?";
 	String selectOrgName = "SELECT OrgName from User where empId = ?";
 	String selectFriends = "SELECT * FROM User where orgName = ? and empId <> ?;";
 	String uploadPicture = "UPDATE User set profilePicture = ? where empId = ?";

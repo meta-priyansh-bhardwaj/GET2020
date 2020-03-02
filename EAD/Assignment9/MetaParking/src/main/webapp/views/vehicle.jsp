@@ -6,10 +6,10 @@
 
 <div class="container form-container">
 	<div class="text-center text-successs alert alert-primary">
-		<p>Successfully registered UserId : ${employeeId}</p>
+		<p>Successfully registered UserId : ${userId}</p>
 	</div>
 	<form:form modelAttribute="vehicle" action="/addVehicle">
-		<form:hidden path="empId" value="${employeeId}" class="form-control" />
+		<form:hidden path="empId" value="${userId}" class="form-control" />
 		<div class="form-group">
 			<form:label path="vehicleName"></form:label>
 			<form:input path="vehicleName" type="text" placeholder="Vehicle Name"
