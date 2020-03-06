@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Imports fontawesome icons -->
+    <script src="https://kit.fontawesome.com/1f1f9aaea7.js" crossorigin="anonymous"></script>
+    <!-- Imports Plyfair font from google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- TO import local external css -->
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <title>Bootstrap Blog</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Top Header section -->
+        <header class="py-3 d-flex align-items-center justify-content-between border-bottom">
+            <div>
+                <a href="#" class="text-secondary text-muted">Subscribe</a>
+            </div>
+            <div>
+                <a href="#" class="header-title text-decoration-none text-dark">Large</a>
+            </div>
+            <div class="text-secondary">
+                <a href="#" class="text-secondary mr-2"><i class="fas fa-search fa-lg"></i></a>
+                <button class="btn btn-outline-secondary">Sign up</button>
+            </div>
+        </header>
+
+        <!-- Navigation section, collapses on small-size (tablet) screen -->
+        <nav class="navbar navbar-expand-lg border-bottom">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-secondary"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav d-flex justify-content-between w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">World</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">U.S.</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Politics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Opinion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Style</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Travel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Includes title and content description of the page -->
+        <div class="jumbotron bg-dark text-white p-4 p-md-5">
+            <div class="col-12 col-md-6 px-0">
+                <h1 class="font-italic title font-weight-bold">Title of a longer featured blog post</span>
+            </div>
+            <div class="jumbotron-text col-12 col-md-6 px-0">
+                <p class="font-weight-lighter">
+                    Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.
+                </p>
+                <a href="#" class="font-weight-bold text-white">
+                    Continue reading...
+                </a>
+            </div>
+        </div>
+
+        <!-- Remaining content of the page -->
+        <div class="container">
+            <div class="row mb-4">
+
+                <!-- Encloses two cards on top -->
+                <div class="col-12 col-md-6">
+                    <div class="card d-flex flex-row overflow-hidden">
+                        <div class="card-body m-2 py-3 px-2">
+                            <span class="text-primary font-weight-bold">World</span>
+                            <h2 class="card-title mb-0">
+                                <a href="#" class="text-dark family-times">Featured post</a>
+                            </h2>
+                            <span class="text-secondary d-block mb-2">Nov 12</span>
+                            <span class="card-text">
+                                This is a wider card with supporting text below as a natural lead-in to additional content.
+                            </span>
+                            <a href="#" class="d-block mt-3">Continue reading</a>
+                        </div>
+                        <img src="images/thumbnail.svg" class="d-none d-md-block" alt="thumbnail" />
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 mt-4 mt-md-0">
+                    <div class="card d-flex flex-row overflow-hidden">
+                        <div class="card-body m-2 py-3 px-2">
+                            <span class="text-success font-weight-bold">Design</span>
+                            <h2 class="card-title mb-0">
+                                <a href="#" class="text-dark family-times">Post title</a>
+                            </h2>
+                            <span class="text-secondary d-block mb-2">Nov 11</span>
+                            <span class="card-text">
+                                This is a wider card with supporting text below as a natural lead-in to additional content.
+                            </span>
+                            <a href="#" class="d-block mt-3">Continue reading</a>
+                        </div>
+                        <img src="images/thumbnail.svg" class="d-none d-md-block" alt="thumbnail" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Main content of the page -->
+                <div class="col-12 col-md-8">
+                    <h2 class="family-times font-italic font-weight-bold border-bottom py-3">
+                        From the Firehose
+                    </h2>
+
+                    <!-- Sample blog post -->
+                    <h1 class="family-times font-weight-bold mt-4 top-heading">
+                        Sample blog post
+                    </h1>
+                    <span class="text-secondary">January 1, 2014 by </span>
+                    <a href="#" class="text-primary">Mark</a>
+                    <p class="border-bottom py-3">
+                        This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.
+                    </p>
+
+                    <p>
+                        Cum sociis natoque penatibus et magnis <a href="#" class="text-primary">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+                    </p>
+                    <p>
+                        Curabitur blandit tempus porttitor. <span class="font-weight-bold">Nullam quis risus eget urna mollis</span> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    </p>
+                    <p>
+                        Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                    </p>
+
+                    <h1 class="family-times font-weight-bold">Heading</h1>
+                    <p>
+                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+
+                    <h2 class="family-times font-weight-bold">Sub-heading</h2>
+                    <p>
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
+                    </p>
+                    <p><code class="text-dark">Example code block</code></p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+                    </p>
+
+                    <h2 class="family-times font-weight-bold">Sub-heading</h2>
+                    <p>
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                    </p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>
+                        Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+                    </p>
+                    <ol>
+                        <li>Vestibulum id ligula porta felis euismod semper.</li>
+                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                    </ol>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
+                    </p>
+
+                    <!-- Another blog post -->
+                    <h1 class="family-times font-weight-bold mt-5 top-heading">
+                        Another blog post
+                    </h1>
+                    <span class="text-secondary">December 23, 2013 by </span>
+                    <a href="#" class="text-primary">Jacob</a>
+
+                    <p>
+                        Cum sociis natoque penatibus et magnis <a href="#" class="text-primary">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+                    </p>
+                    <p>
+                        Curabitur blandit tempus porttitor. <span class="font-weight-bold">Nullam quis risus eget urna mollis</span> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    </p>
+                    <p>
+                        Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                    </p>
+                    <p>
+                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+
+                    <!-- New feature -->
+                    <h1 class="family-times font-weight-bold mt-5 top-heading">
+                        New feature
+                    </h1>
+                    <span class="text-secondary">December 4, 2013 by </span>
+                    <a href="#" class="text-primary">Chris</a>
+
+                    <p>
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                    </p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>
+                        Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                    </p>
+                    <p>
+                        Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+                    </p>
+
+                    <!-- Navigation to previous and next pages, currently disabled -->
+                    <nav class="my-5 options">
+                        <button class="btn btn-outline-primary rounded-pill">Older</button>
+                        <button class="btn btn-outline-secondary rounded-pill disabled">Newer</button>
+                    </nav>
+                </div>
+
+                <!-- Side content of the page -->
+                <div class="col-12 col-md-4">
+                    <div class="card bg-light mb-3 side-content border-light">
+
+                        <!-- About information -->
+                        <div class="card-body">
+                          <div class="card-title family-times font-italic font-weight-bold side-content-title">
+                              About
+                            </div>
+                          <p class="card-text">Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                        </div>
+                      </div>
+
+                      <!-- Archives from past -->
+                      <div class="side-content mt-4">
+                          <div class="family-times font-italic font-weight-bold side-content-title mb-1">
+                              Archives
+                            </div>
+                          <ul class="list-unstyled">
+                              <li><a href="#">March 2014</a></li>
+                              <li><a href="#">February 2014</a></li>
+                              <li><a href="#">January 2014</a></li>
+                              <li><a href="#">December 2013</a></li>
+                              <li><a href="#">November 2013</a></li>
+                              <li><a href="#">October 2013</a></li>
+                              <li><a href="#">September 2013</a></li>
+                              <li><a href="#">August 2013</a></li>
+                              <li><a href="#">July 2013</a></li>
+                              <li><a href="#">June 2013</a></li>
+                              <li><a href="#">May 2013</a></li>
+                              <li><a href="#">April 2013</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Social media links -->
+                      <div class="side-content mt-4">
+                        <div class="family-times font-italic font-weight-bold side-content-title mb-1">
+                            Elsewhere
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer section -->
+    <footer class="bg-light">
+        <div class="container text-secondary">
+            <div class="row justify-content-center">
+                <div class="col-auto pt-5 pb-3">
+                    Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto pb-5">
+                    <a href="#">Back to top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
