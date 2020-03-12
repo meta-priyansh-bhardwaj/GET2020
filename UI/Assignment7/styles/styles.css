@@ -1,0 +1,46 @@
+body {
+    background-color: #efeff5;
+}
+
+#addEmployee {
+    color: black;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#copyright {
+    text-align: center;
+}
+
+#imgSrc {
+    text-align: center;
+}
+
+#val_error_message {
+    text-align: left;
+    font-size: large;
+}
+
+#vehicleNameDiv {
+    background-color: rgb(97, 153, 190);
+}
+
+input,
+select {
+    border-radius: 4px;
+    line-height: 200%;
+    margin-left: 30px;
+    color: #000080;
+    font-size: 20px;
+}
+
+#firstdiv {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
