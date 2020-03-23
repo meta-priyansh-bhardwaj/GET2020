@@ -26,7 +26,6 @@ public class TestMultivariatePolynomial {
 				new char[][]{{'x','y'}, {'x','z'},{'w','y'}, {}},
 				new int[][]{{1,2}, {6,1}, {4,4}, {}});
 		int expectedDegree = 8;
-		System.out.println(polynomial.findDegree());
 		Assert.assertEquals(expectedDegree, polynomial.findDegree());
 	}
 }

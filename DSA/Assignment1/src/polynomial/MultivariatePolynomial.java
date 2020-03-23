@@ -47,7 +47,7 @@ public class MultivariatePolynomial {
 			}
 			for(int j=0;j<variables[i].length;j++){
 				if(powers[i][j] < 0){
-					// System.out.println("Invalid negative power found!");
+					System.out.println("Invalid negative power found!");
 					head = null;
 					return;
 				}
@@ -64,7 +64,7 @@ public class MultivariatePolynomial {
 		int degree = 0;
 		Term currentTerm = head;
 		while(currentTerm != null){
-			 System.out.print(currentTerm.getCoefficient());
+			// System.out.print(currentTerm.getCoefficient());
 			degree = Math.max(degree, currentTerm.getSumOfPowers());
 			currentTerm = currentTerm.getNext();
 		}
