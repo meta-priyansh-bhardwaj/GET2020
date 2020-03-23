@@ -157,7 +157,7 @@ public class LinkedList {
 	 * @param position
 	 *            a positive value in range of size of the linked list
 	 */
-	public void makeLoop(int position) {
+	public void createLoop(int position) {
 		if (this.head == null) {
 			return;
 		}
@@ -196,21 +196,5 @@ public class LinkedList {
 			currentNode2 = currentNode2.getNext();
 		}
 		return currentNode1 == currentNode2;
-	}
-
-	public static void main(String args[]) {
-		LinkedList linkedList = new LinkedList();
-		
-		int arr[] = {3,42,2,42,3,15,6,5,9};
-		for (int value: arr) {
-			linkedList.insertNode(value);
-		}
-		
-		linkedList.display();
-		System.out.println(linkedList.detectLoop());
-		linkedList.rotateSubList(2, 8, 2);
-		linkedList.display();
-		linkedList.makeLoop(9);
-		System.out.println(linkedList.detectLoop());
 	}
 }

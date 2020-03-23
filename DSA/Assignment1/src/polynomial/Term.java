@@ -57,6 +57,7 @@ public class Term {
 	public void addVariable(int power, char notation){
 		if(this.variables == null){
 			this.variables = new Variable(power, notation);
+			return;
 		}
 		Variable currentVariable = new Variable(power, notation);
 		currentVariable.setNext(this.variables);
