@@ -13,14 +13,12 @@ public class MultivariatePolynomial {
 	 * @param variables array of variable notation characters
 	 * @param powers array of non-negative powers
 	 */
-	public MultivariatePolynomial(double[] coefficients, char[][] variables, int[][] powers){
+	public MultivariatePolynomial(double[] coefficients, char[][] variables, int[][] powers) throws Exception{
 		if(coefficients == null || variables == null || powers == null){
-			System.out.println("Null input provided");
-			return;
+			throw new Exception("Null input provided");
 		}
 		if(coefficients.length != variables.length || variables.length != powers.length){
-			System.out.println("Input count mismatch");
-			return;
+			throw new Exception("Input count mismatch");
 		}
 		int length = coefficients.length;
 		Term currentTerm = null;
@@ -36,20 +34,14 @@ public class MultivariatePolynomial {
 				currentTerm = currentTerm.getNext();
 			}
 			if(variables[i] == null || powers[i] == null){
-				System.out.println("Null input provided");
-				head = null;
-				return;
+				throw new Exception("Null input provided");
 			}
 			if(variables[i].length != powers[i].length){
-				System.out.println("Input length mismatch");
-				head = null;
-				return;
+				throw new Exception("Input length mismatch");
 			}
 			for(int j=0;j<variables[i].length;j++){
 				if(powers[i][j] < 0){
-					System.out.println("Invalid negative power found!");
-					head = null;
-					return;
+					throw new Exception("Invalid negative power found!");
 				}
 				currentTerm.addVariable(powers[i][j], variables[i][j]);
 			}

@@ -76,17 +76,15 @@ public class LinkedList {
 	 *            a not-negative integer
 	 * @return true if rotated successfully or false otherwise
 	 */
-	public boolean rotateSubList(int leftPosition, int rightPosition, int steps) {
+	public void rotateSubList(int leftPosition, int rightPosition, int steps) throws Exception {
 		if (leftPosition > rightPosition) {
-			System.out.println("Invalid values of left and right");
-			return false;
+			throw new Exception("Invalid values of left and right");
 		}
 		Node leftNode = this.head;
 		Node prevOfLeftNode = null;
 		for (int i = 1; i <= leftPosition; i++) {
 			if (leftNode == null) {
-				System.out.println("No node found at position " + leftPosition);
-				return false;
+				throw new Exception("No node found at position " + leftPosition);
 			}
 			if (i < leftPosition) {
 				prevOfLeftNode = leftNode;
@@ -97,8 +95,7 @@ public class LinkedList {
 		Node rightNode = leftNode;
 		for (int i = leftPosition; i <= rightPosition; i++) {
 			if (rightNode == null) {
-				System.out.println("No node found at position " + rightPosition);
-				return false;
+				throw new Exception("No node found at position " + rightPosition);
 			}
 			if (i < rightPosition) {
 				rightNode = rightNode.getNext();
@@ -109,7 +106,7 @@ public class LinkedList {
 		steps %= subListLength;
 		
 		if(steps == 0){
-			return true;
+			return;
 		}
 		
 		Node breakNode = leftNode;
@@ -123,7 +120,6 @@ public class LinkedList {
 		}
 		breakNode.setNext(rightNode.getNext());
 		rightNode.setNext(leftNode);
-		return true;
 	}
 
 	/**
