@@ -1,7 +1,9 @@
 package uniqueCharacters;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Class to solve counting of unique characters in a string
@@ -26,21 +28,11 @@ public class UniqueCharacters {
 			return uniqueCount;
 		}
 		
-		uniqueCount = 0;
-		Map<Character,Integer> charactersCount = new HashMap<Character, Integer>();
+		Set<Character> uniqueCharacters = new HashSet<Character>();
 		for(int i=0;i<string.length();i++) {
-			Integer count = charactersCount.get(string.charAt(i));
-			if(count == null) {
-				charactersCount.put(string.charAt(i), 1);
-			} else {
-				charactersCount.put(string.charAt(i), count+1);
-			}
+			uniqueCharacters.add(string.charAt(i));
 		}
-		for(int count: charactersCount.values()) {
-			if(count == 1) {
-				uniqueCount++;
-			}
-		}
+		uniqueCount = uniqueCharacters.size();
 		return uniqueCount;
 	}
 }

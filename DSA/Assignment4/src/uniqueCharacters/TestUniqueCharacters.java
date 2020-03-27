@@ -12,16 +12,16 @@ class TestUniqueCharacters {
 
 	@Test
 	public void testUniqueCharacters1() {
-		assertEquals(1, UniqueCharacters.countUniqueCharacters("mmmmmmmmmn"));
-		assertEquals(3, UniqueCharacters.countUniqueCharacters("hello"));
-		assertEquals(1, UniqueCharacters.countUniqueCharacters("malyalam"));
-		assertEquals(8, UniqueCharacters.countUniqueCharacters("asdfgghjkl"));
+		assertEquals(2, UniqueCharacters.countUniqueCharacters("mmmmmmmmmn"));
+		assertEquals(4, UniqueCharacters.countUniqueCharacters("hello"));
+		assertEquals(4, UniqueCharacters.countUniqueCharacters("malyalam"));
+		assertEquals(9, UniqueCharacters.countUniqueCharacters("asdfgghjkl"));
 	}
 
 	@Test
 	public void testUniqueCharacters2() {
 		assertEquals(0, UniqueCharacters.countUniqueCharacters(""));
 		assertEquals(1, UniqueCharacters.countUniqueCharacters(" "));
-		assertEquals(0, UniqueCharacters.countUniqueCharacters("  "));
+		assertEquals(1, UniqueCharacters.countUniqueCharacters("  "));
 	}
 }
